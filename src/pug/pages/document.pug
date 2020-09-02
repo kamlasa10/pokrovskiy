@@ -1,0 +1,75 @@
+extends ../layout/main
+block variable
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="/wp-content/themes/pokrovsky/assets/styles/main.min.css")
+block scripts
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/libs.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/snap.svg.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/index.js')
+    //script(src='/wp-content/themes/pokrovsky/assets/scripts/scroll.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/contact.js')
+    //script( src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCvIwpQlmn08p4nR3bND8v3PBuMrWNMsZM&callback=initMap')
+
+
+block content
+    section.documents
+        include ./includes/breadcrumb
+        h1.title Документи
+        .documents__wrap
+            .document
+                svg( viewBox="0 0 450 431" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg").document__bg
+                    path( d="M3.5 427.5V74.0776L446.5 4.0963V427.5H3.5Z" )
+                .document__text Сертифікати про введення другої і третьої черги по будинку №3 і будинку №9
+                a(href='/' target='_blank' ).document__button.button-hover
+                    |Переглянути <br> документ
+                    .bg-small-left
+                        include ../../static/small-house.php
+                .document__icon
+                    +img('documentation/doc.svg')
+            .document
+                svg( viewBox="0 0 450 431" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg").document__bg
+                    path( d="M3.5 427.5V74.0776L446.5 4.0963V427.5H3.5Z" )
+                .document__text Сертифікати про введення другої і третьої черги по будинку №3 і будинку №9
+                a(href='/' target='_blank' ).document__button.button-hover
+                    |Переглянути <br> документ
+                    .bg-small-left
+                        include ../../static/small-house.php
+                .document__icon
+                    +img('documentation/doc.svg')
+            .document
+                svg( viewBox="0 0 450 431" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg").document__bg
+                    path( d="M3.5 427.5V74.0776L446.5 4.0963V427.5H3.5Z" )
+                .document__text Сертифікати про введення другої і третьої черги по будинку №3 і будинку №9
+                a(href='/' target='_blank' ).document__button.button-hover
+                    |Переглянути <br> документ
+                    .bg-small-left
+                        include ../../static/small-house.php
+                .document__icon
+                    +img('documentation/doc.svg')
+            .document
+                svg( viewBox="0 0 450 431" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg").document__bg
+                    path( d="M3.5 427.5V74.0776L446.5 4.0963V427.5H3.5Z" )
+                .document__text Сертифікати про введення другої і третьої черги по будинку №3 і будинку №9
+                a(href='/' target='_blank' ).document__button.button-hover
+                    |Переглянути <br> документ
+                    .bg-small-left
+                        include ../../static/small-house.php
+                .document__icon
+                    +img('documentation/doc.svg')
+
+
+
+
+
+block footer
+    footer.footer.footer__small
+        include ../includes/menu
+        include ../includes/footer
+
+    // include ../pages/includes/forms
+block header
+    header.header.header-bg-blue
+        include ../includes/header.pug

@@ -1,0 +1,51 @@
+extends ../layout/main
+block variable
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="/wp-content/themes/pokrovsky/assets/styles/main.min.css")
+block scripts
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/libs.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/snap.svg.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/index.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/libs/vendors.bundle.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/libs/view.bundle.js')
+    //script( src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCvIwpQlmn08p4nR3bND8v3PBuMrWNMsZM&callback=initMap')
+
+
+block content
+    section.view
+        include ./includes/breadcrumb
+        h1.title Вигляд
+        .view__slider.js-view__slider
+        .view__arrow.view__left.js-view__left
+            svg( viewBox="0 0 60 45" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg")
+                path( fill-rule="evenodd" clip-rule="evenodd" d="M32.6384 41.4989L49.1144 25.1259L0.201368 24.9199L0.304343 20.0801L49.3204 19.9771L32.7414 3.50114L36.2426 -5.80422e-06L59 22.4485L36.1396 45L32.6384 41.4989Z")
+        .view__arrow.view__right.js-view__right
+            svg( viewBox="0 0 60 45" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg")
+                path( fill-rule="evenodd" clip-rule="evenodd" d="M32.6384 41.4989L49.1144 25.1259L0.201368 24.9199L0.304343 20.0801L49.3204 19.9771L32.7414 3.50114L36.2426 -5.80422e-06L59 22.4485L36.1396 45L32.6384 41.4989Z")
+
+        .view__amount
+            .view__amount-current.js-view__amount-current 1
+            |/
+            .view__amount-all.js-view__amount-all 3
+
+        //a(href='#').view__button.js-view__button
+        //    | Дивитися повне <br>зображення
+        //    .bg-small-left
+        //        include ../../static/small-house.php
+
+
+
+block footer
+
+    footer.footer.footer__small
+        include ../includes/menu
+        include ../includes/footer
+
+
+    // include ../pages/includes/forms
+block header
+    header.header.header-transparent
+        include ../includes/header.pug

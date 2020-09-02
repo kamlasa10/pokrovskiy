@@ -1,0 +1,68 @@
+.pagination{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  //height: 50px;
+  &__arrow{
+    @include flexCenter();
+    margin: auto 12px;
+    height: auto;
+    cursor: pointer;
+    svg{
+      fill: #FFFFFF;
+    }
+    &--right{
+      transform: rotate(180deg);
+    }
+    &.disabled svg{
+      cursor: no-drop;
+      fill: #AEAFAB;
+    }
+  }
+}
+.dots{
+  display: flex;
+  align-items: center;
+  &__element{
+    @include flexCenter();
+    height: 48px;
+    width: 62px;
+    transition: background 0.3s linear;
+    cursor: pointer;
+    padding-top: 10px;
+    color: #EAF1FF;
+    font-size: 18px;
+    line-height: 1.8em;
+    &:hover{
+      //color: $mc2;
+    }
+    @include to(1440px) {
+      height: 38px;
+      width: 50px;
+      padding-top: 8px;
+    }
+    @include to(767px) {
+      height: 30px;
+      width: 40px;
+    }
+    &.active{
+      background-size: 100%;
+      //background: #F9F9F9;
+      background: url("/wp-content/themes/pokrovsky/assets/images/icon/dots.svg") no-repeat center/contain;
+      //color: #323131;
+      pointer-events: none;
+    }
+    a{
+      //color: $green;
+      text-decoration: none;
+    }
+  }
+  &__place{
+    @include flexCenter();
+    //color: $green;
+    @include to(480px) {
+      height: 30px;
+      width: 20px;
+    }
+  }
+}

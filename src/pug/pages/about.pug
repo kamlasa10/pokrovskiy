@@ -1,0 +1,99 @@
+extends ../layout/main
+block variable
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="/wp-content/themes/pokrovsky/assets/styles/main.min.css")
+block scripts
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/libs.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/snap.svg.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/index.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/libs/vendors.bundle.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/libs/menu.bundle.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/libs/snake.bundle.js')
+
+
+block content
+    section.about
+        include ./includes/breadcrumb
+        h1.title Про Pokrovsky
+        .about__list-wrap.js-snack__wrap
+            .about__list
+                .about__el
+                    +img('/about/1.jpg').about__img
+                    .about__content
+                        .about__title Резюме
+                        .about__text  Елітний мікрорайон поруч з <br> центром
+                .about__el
+                    +img('/about/2.jpg').about__img
+                    .about__content
+                        .about__text  Комплекс, який відкриває <br> скайлайн міста
+                .about__el
+                    +img('/about/3.jpg').about__img
+                    .about__content
+                        .about__text  212 квартир бізнес-класу <br> від РЕНОМЕ
+                .about__el
+                    +img('/about/4.jpg').about__img
+                    .about__content
+                        +img('/about/Archimatika.svg').about__logo
+                        .about__text  Проєкт від Archimatika <br> кращого архітектурного <br> бюро України
+                .about__el
+                    +img('/about/5.jpg').about__img
+                    .about__content
+                        .about__title Архітектура
+                        .about__text  Центрально-європейська <br> архітектура
+                .about__el
+                    +img('/about/6.jpg').about__img
+                    .about__content
+                        .about__text  Будинки на стилобаті
+                .about__el
+                    +img('/about/7.jpg').about__img
+                    .about__content
+                        .about__title Квартири
+                        .about__text  Функціональні європейські <br> планування
+                .about__el
+                    +img('/about/8.jpg').about__img
+                    .about__content
+                        .about__text  Видові квартири
+                .about__el
+                    +img('/about/9.jpg').about__img
+                    .about__content
+                        .about__text  Квартири з каміном
+                .about__el
+                    +img('/about/10.jpg').about__img
+                    .about__content
+                        .about__text  Дворівневі квартири з <br> мансардними вікнами
+                .about__el
+                    +img('/about/11.jpg').about__img
+                    .about__content
+                        .about__text  Ванна кімната  з вікном
+                .about__el
+                    +img('/about/12.jpg').about__img
+                    .about__content
+                        .about__text  Комірки у квартирі
+                .about__el
+                    +img('/about/13.jpg').about__img
+                    .about__content
+                        .about__text  Гардеробні кімнати
+                .about__el
+                    +img('/about/14.jpg').about__img
+                    .about__content
+                        .about__text  Кухні-студії
+            .snake-wrap(id="snake")
+                svg(class="snake"  xmlns="http://www.w3.org/2000/svg" width="32" height="10" viewBox="0 0 32 10")
+                    path(d="M31.59,2.06,31.68,2l-.15-.24-.28.17-.63-.06A3.84,3.84,0,0,0,29.13.42a2.28,2.28,0,0,0-2.25-.2c-.38.18-.46.37-.94.47-.14,0-.31.05-.49.07-.44.05-.95.08-1.27.13-1.44.22-2.91,1.5-4.39,2.67a6,6,0,0,1-3,1.1,8.2,8.2,0,0,1-4.24-.79c-1.69-.73-2.74-1.65-4.24-2.09C4.33.61,3.42.78,1.35,2.36-.24,3.57-.44,3.92.83,3.31c.44-.28,1-.62,1.22-.77,1.26-.73,4.44-.73,7.43,1.33a16,16,0,0,0,3.86,1.8c3.69,1,5.68.78,8.12-1.38a10.86,10.86,0,0,1,2.3-1.68,5.2,5.2,0,0,1,1.69-.37A2.44,2.44,0,0,1,27,2.46c.8.75,3,.38,3.55-.18a.67.67,0,0,0,.06-.12l.65.06.3.16.14-.25Z")
+
+                //svg( width="10" height="52" viewBox="0 0 5 26" fill="none" xmlns="http://www.w3.org/2000/svg" ).snake
+                //    path( d="M3.75788 0.965763C3.50456 0.860933 3.27621 0.881463 3.15831 1.13896C2.84346 1.82662 2.79546 3.77911 3.36071 4.13123C3.70594 4.3463 3.85188 6.22496 3.55726 6.86843C3.4614 7.0778 2.92207 7.79089 2.3591 8.45332C0.112453 11.0968 -0.455507 14.0836 0.860753 16.3303C1.08446 16.7121 1.73607 17.6368 2.30852 18.3846C4.01526 20.6141 4.55562 22.5685 4.07791 23.8786C3.97996 24.1472 3.83133 24.7148 3.68439 25.1977C3.39775 26.4921 3.61515 26.1836 4.26601 24.3701C5.11059 22.0167 5.03537 21.0192 3.81553 18.3584C3.2581 17.1425 2.56777 15.7161 2.28156 15.1896C1.61848 13.97 1.49508 12.1919 1.99908 11.1034C2.20302 10.663 2.72891 9.88682 3.16721 9.37828C4.22175 8.15476 4.66564 7.2584 4.76013 5.95846C4.78871 5.56527 4.60027 4.72159 4.62153 4.28176C4.6428 3.84193 4.75744 3.69972 4.84532 3.31366C5.12507 2.08461 4.50564 1.54605 4.50564 1.54605C4.2896 1.30029 4.01121 1.07059 3.75788 0.965763V0.965763Z" fill="black")
+                //    path( d="M3.25046 0.456441L3.07617 0.233765M3.35806 1.14671L3.22387 0.456514L3.3243 0.110596L3.35806 1.14671Z" stroke="black" stroke-width="0.217127")
+
+block footer
+    footer.footer.footer__small
+        include ../includes/menu
+        include ../includes/footer
+    include ../pages/includes/forms
+
+block header
+    header.header.header-transparent.header-bg-blue
+        include ../includes/header.pug

@@ -1,0 +1,32 @@
+extends ../layout/main
+
+block meta
+    title= '404'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="/wp-content/themes/pokrovsky/assets/styles/main.min.css")
+block scripts
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/libs.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/snap.svg.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/index.js')
+
+block content
+    section(class="thanks-wrap")
+        div(class="thanks")
+            h1(class="thanks__title") Заявку відправлено
+            p(class="thanks__subtitle") Дякуємо за звернення!
+            p(class="thanks__subtitle") Ми обов`язково зв`яжемося з Вами найближчим часом!
+            div(class="link-wrap")
+                a(class="button-fill" onclick="window.history.go(-1);")
+                    span.button-fill__text Назад
+                a(class="button-fill" href="/")
+                    span.button-fill__text На главную
+
+block footer
+    include ../includes/menu
+    footer.footer
+        include ../includes/footer
+
+block header
+    header.header
+        include ../includes/header.pug

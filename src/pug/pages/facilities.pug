@@ -1,0 +1,63 @@
+extends ../layout/main
+block variable
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="/wp-content/themes/pokrovsky/assets/styles/main.min.css")
+block scripts
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/libs.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/snap.svg.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/index.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/view.js')
+    //script( src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCvIwpQlmn08p4nR3bND8v3PBuMrWNMsZM&callback=initMap')
+
+
+block content
+    section.facilities
+        include ./includes/breadcrumb
+        h1.title Зручності
+        .facilities__list
+            .facilities__el
+                +img('/facilities/1.jpg').about__img
+                .facilities__content
+                    .facilities__text  Підземний паркінг
+            .facilities__el
+                +img('/facilities/2.jpg').about__img
+                .facilities__content
+                    .facilities__text  Велосипедно-колясочні кімнати
+            .facilities__el
+                +img('/facilities/3.jpg').about__img
+                .facilities__content
+                    .facilities__text  Лапкомийки
+            .facilities__el
+                +img('/facilities/4.jpg').about__img
+                .facilities__content
+                    .facilities__text  Закрита територія та відеонагляд
+            .facilities__el
+                +img('/facilities/5.jpg').about__img
+                .facilities__content
+                    .facilities__text  Дитячий майданчик та зони відпочинку
+            .facilities__el
+                +img('/facilities/6.jpg').about__img
+                .facilities__content
+                    .facilities__text  Супермаркет на 1 поверсі
+            .facilities__el
+                +img('/facilities/7.jpg').about__img
+                .facilities__content
+                    .facilities__text  Пішохідна вулиця
+            .facilities__el
+                +img('/facilities/8.jpg').about__img
+                .facilities__content
+                    .facilities__text  2 парки в 10 хв від дому
+
+block footer
+    footer.footer.footer__small
+        include ../includes/menu
+        include ../includes/footer
+
+
+    // include ../pages/includes/forms
+block header
+    header.header.header-bg-blue
+        include ../includes/header.pug

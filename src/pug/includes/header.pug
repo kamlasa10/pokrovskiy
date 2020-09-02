@@ -1,0 +1,31 @@
+//a(href='/').logo
+//    img(src='/wp-content/themes/pokrovsky/assets/images/icon/Logo.svg')
+button.callback.js-call.button-hover
+    | Зворотній</br>
+    | дзвінок
+    .bg-small-left
+        include ../../static/small-house.php
+.address
+    a(href='/contact').address__link
+        +svg('point').address__icon
+        |Рівне, Костромська, 73
+.tel
+    a(href='0673602826').tel__link
+        +svg('phone').tel__icon
+        |+380 67 360 28 26
+.lang
+    .lang-list
+       a(href='#').lang-list__item RU
+        a(href='#').lang-list__item EN
+       a(href='#').lang-list__item.lang-active UA
+//a(href='/').logo
+//    img(src='/wp-content/themes/pokrovsky/assets/images/icon/Logo.svg')
+.burger.js-burger
+    | Меню
+    .bg-small-right
+        // svg in php file small-house
+        include ../../static/small-house.php
+    div.burger__icon
+        span
+        span
+        span

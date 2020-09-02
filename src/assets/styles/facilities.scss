@@ -1,0 +1,265 @@
+.facilities{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    background: #2F5677;
+    &__list{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(2,570px 200px 570px);
+      grid-gap: 30px;
+      padding: 20px 30px 110px;
+    }
+    &__el{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      &:nth-child(4n+1){
+        clip-path: polygon(0 0,100% 0,100% calc(100% - 230px),0 100%);
+      }
+      &:nth-child(4n+2){
+        clip-path: polygon(0 0,100% 0,100% 100%,0 calc(100% - 230px));
+      }
+      &:nth-child(4n+3){
+        clip-path: polygon(0 230px,100% 0,100% 100%,0 100%);
+      }
+      &:nth-child(4n+4){
+        clip-path: polygon(0 0,100% 230px,100% 100%,0 100%);
+      }
+
+
+      &:nth-child(1),&:nth-child(2){
+        grid-row: 1 / span 2;
+        justify-content: flex-start;
+        .facilities__content{
+          text-align: left;
+          padding: 30px 42px 60px;
+          background: rgba(97, 175, 170, 0.95);
+          clip-path: polygon(0 0,100% 0,100% calc(100% - 150px),0 100%);
+        }
+      }
+
+      &:nth-child(3),&:nth-child(4){
+        grid-row: 2 / span 2;
+        justify-content: flex-end;
+        .facilities__content{
+          justify-content: flex-end;
+          text-align: right;
+          background: rgba(97, 175, 170, 0.95);
+          clip-path: polygon(0 150px,100% 0,100% 100%,0 100%);
+        }
+        .facilities__text{
+          margin-left: auto;
+        }
+      }
+      &:nth-child(5),&:nth-child(6){
+        grid-row: 4 / span 2;
+        justify-content: flex-start;
+        .facilities__content{
+          text-align: left;
+          padding: 30px 42px 60px;
+          background: rgba(97, 175, 170, 0.95);
+          clip-path: polygon(0 0,100% 0,100% calc(100% - 150px),0 100%);
+        }
+      }
+      &:nth-child(7),&:nth-child(8){
+        grid-row: 5 / span 2;
+        justify-content: flex-end;
+        .facilities__content{
+          justify-content: flex-end;
+          text-align: right;
+          background: rgba(97, 175, 170, 0.95);
+          clip-path: polygon(0 150px,100% 0,100% 100%,0 100%);
+        }
+        .facilities__text{
+          margin-left: auto;
+        }
+      }
+      &:nth-child(even){
+        grid-column: 2;
+      }
+
+      &:nth-child(odd){
+        grid-column: 1;
+      }
+    }
+    &__img{
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    &__content{
+      display: flex;
+      flex-direction: column;
+      min-height: 150px;
+      padding: 60px 42px 30px;
+    }
+    &__text{
+      width: 40%;
+      font-family: "Mont";
+      Monteight: 600;
+      font-size: 24px;
+      line-height: 1.6em;
+      color: #EAF1FF;
+    }
+}
+
+
+@media screen and (max-width: 1440px){
+  .facilities {
+    &__text {
+      font-size: 16px;
+    }
+    &__list {
+      grid-template-rows: repeat(2, 375px 100px 375px);
+      grid-gap: 20px;
+      padding: 20px 20px 90px;
+    }
+    &__content {
+      min-height: 100px;
+      padding: 42px 28px 30px;
+    }
+
+    &__el{
+      &:nth-child(4n+1){
+        clip-path: polygon(0 0,100% 0,100% calc(100% - 120px),0 100%);
+      }
+      &:nth-child(4n+2){
+        clip-path: polygon(0 0,100% 0,100% 100%,0 calc(100% - 120px));
+      }
+      &:nth-child(4n+3){
+        clip-path: polygon(0 120px,100% 0,100% 100%,0 100%);
+      }
+      &:nth-child(4n+4){
+        clip-path: polygon(0 0,100% 120px,100% 100%,0 100%);
+      }
+
+
+      &:nth-child(1),&:nth-child(2){
+        .facilities__content{
+          padding: 30px 28px 42px;
+          clip-path: polygon(0 0,100% 0,100% calc(100% - 80px),0 100%);
+        }
+      }
+
+      &:nth-child(3),&:nth-child(4){
+        .facilities__content{
+          clip-path: polygon(0 80px,100% 0,100% 100%,0 100%);
+        }
+      }
+      &:nth-child(5),&:nth-child(6){
+        .facilities__content{
+          padding: 30px 28px 42px;
+          clip-path: polygon(0 0,100% 0,100% calc(100% - 80px),0 100%);
+        }
+      }
+      &:nth-child(7),&:nth-child(8){
+        .facilities__content{
+          clip-path: polygon(0 80px,100% 0,100% 100%,0 100%);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px){
+  .facilities {
+    &__text {
+      font-size: 14px;
+    }
+    &__list {
+      grid-template-rows: repeat(2, 280px 50px 280px);
+      grid-gap: 10px;
+      padding: 40px 10px 90px;
+    }
+    &__content {
+      min-height: 100px;
+      padding: 32px 15px 10px;
+    }
+
+    &__el{
+      &:nth-child(4n+1){
+        clip-path: polygon(0 0,100% 0,100% calc(100% - 60px),0 100%);
+      }
+      &:nth-child(4n+2){
+        clip-path: polygon(0 0,100% 0,100% 100%,0 calc(100% - 60px));
+      }
+      &:nth-child(4n+3){
+        clip-path: polygon(0 60px,100% 0,100% 100%,0 100%);
+      }
+      &:nth-child(4n+4){
+        clip-path: polygon(0 0,100% 60px,100% 100%,0 100%);
+      }
+
+
+      &:nth-child(1),&:nth-child(2){
+        .facilities__content{
+          padding: 10px 15px 32px;
+          clip-path: polygon(0 0,100% 0,100% calc(100% - 50px),0 100%);
+        }
+      }
+
+      &:nth-child(3),&:nth-child(4){
+        .facilities__content{
+          clip-path: polygon(0 50px,100% 0,100% 100%,0 100%);
+        }
+      }
+      &:nth-child(5),&:nth-child(6){
+        .facilities__content{
+          padding: 10px 15px 32px;
+          clip-path: polygon(0 0,100% 0,100% calc(100% - 50px),0 100%);
+        }
+      }
+
+      &:nth-child(7),&:nth-child(8){
+        .facilities__content{
+          clip-path: polygon(0 50px,100% 0,100% 100%,0 100%);
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 767px){
+  .facilities{
+    &__list{
+      grid-template-rows: 230px;
+      grid-template-columns: minmax(230px, 1fr);
+      grid-auto-rows:  minmax(230px, 1fr);
+      grid-gap: 10px;
+      padding: 0 10px 90px;
+    }
+    &__content{
+      min-height: 100px;
+      padding: 32px 15px 10px;
+    }
+    &__el:nth-child(1n){
+      height: 100%;
+      justify-content: flex-end;
+      align-items: flex-end;
+      clip-path: none;
+      grid-column: 1;
+      grid-row: auto;
+      z-index: 5;
+    }
+    .facilities__el{
+      .facilities__content:not(.f){
+        width: 100%;
+        clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
+        padding: 35px 15px 10px;
+        min-height: 60px;
+      }
+      .facilities__text{
+        margin: 0 auto 0 0;
+        text-align: left;
+      }
+    }
+  }
+}

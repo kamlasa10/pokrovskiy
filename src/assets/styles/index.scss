@@ -1,0 +1,131 @@
+.active {
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   opacity: 1
+ }
+ .close {
+   position: absolute;
+   top: 0;
+   right: 10px;
+   display: inline-block;
+   width: 30px;
+   height: 30px;
+   border: none;
+   border-radius: 50%;
+   cursor: pointer;
+   z-index: 120;
+   &:hover::after {
+     transform: translateX(-50%)rotate(-45deg) scale(1.2)
+   }
+
+   &:hover::before {
+     transform: translateX(-50%)rotate(45deg) scale(1.2)
+   }
+
+   &:hover::before,&:hover::after {
+     background: #8fac5c;
+   }
+
+   &::before,&::after {
+     content: "";
+     position: absolute;
+     height: 1px;
+     width: 50%;
+     top: 50%;
+     left: 50%;
+     margin-top: -1px;
+     transition: .3s all linear;
+   }
+
+   &::before {
+     transform: translateX(-50%)rotate(45deg)
+   }
+   &::after {
+     transform: translateX(-50%)rotate(-45deg)
+   }
+ }
+
+.text{
+  position: relative;
+  display: inline-block;
+  font-size: 18px;
+  color: #323131;
+}
+.main{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  //z-index: 1;
+  &-house{
+    display: inline-block;
+    width: 36.5vw;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    margin: 0 0 0 auto;
+
+    img{
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+.bg{
+  &-small{
+    position: absolute;
+    top: 50%;
+    width: min(vw(117), 117px);
+    height: min(vw(91), 91px);
+    z-index: -1;
+    &-right{
+      @extend .bg-small;
+      right: 0;
+       transform: translate(50%, -55%);
+    }
+    &-left{
+      @extend .bg-small;
+      left: 0;
+       transform: translate(-50%, -55%);
+    }
+    svg{
+      fill: transparent;
+      stroke:#C58A60;
+      stroke-width:7px;
+    }
+  }
+}
+
+@media screen and (max-width: 1440px){
+  .bg{
+    &-small{
+      width: 82px;
+      height: 64px;
+      &-left{
+        transform: translate(-35px, -55%);
+      }
+      &-right{
+        transform: translate(35px, -55%);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px){
+  .bg-small svg, .bg-small-right svg, .bg-small-left svg{
+    stroke-width: 4px;
+  }
+}
+@media screen and (max-width: 767px){
+  .bg{
+    &-small{
+      width: 67px;
+      height: 52px;
+    }
+  }
+  .bg-small svg, .bg-small-right svg, .bg-small-left svg{
+    stroke-width: 2px;
+  }
+}

@@ -1,0 +1,383 @@
+.about{
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  background: #2F5677;
+  &__list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 570px repeat(3,570px 200px 570px);
+    grid-gap: 30px;
+    padding: 40px 30px 90px;
+    &-wrap{
+      position: relative;
+    }
+  }
+  &__el{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    &:nth-child(1){
+      clip-path: polygon(0 0,100% 230px,100% 100%,0 100%);
+    }
+    &:nth-child(2){
+      clip-path: polygon(0 230px,100% 0,100% 100%,0 100%);
+    }
+    &:nth-child(4n+3){
+      clip-path: polygon(0 0,100% 0,100% calc(100% - 230px),0 100%);
+    }
+    &:nth-child(4n+4){
+      clip-path: polygon(0 0,100% 0,100% 100%,0 calc(100% - 230px));
+    }
+    &:nth-child(4n+5){
+      clip-path: polygon(0 230px,100% 0,100% 100%,0 100%);
+    }
+    &:nth-child(4n+6){
+      clip-path: polygon(0 0,100% 230px,100% 100%,0 100%);
+    }
+
+
+    &:nth-child(1),&:nth-child(2){
+      grid-row: 1 / span 2;
+      justify-content: flex-end;
+      .about__content{
+        text-align: left;
+        background: rgba(97, 175, 170, 0.95);
+        clip-path: polygon(0 0,100% 150px,100% 100%,0 100%);
+      }
+    }
+    &:nth-child(3),&:nth-child(4){
+      grid-row: 3 / span 2;
+    }
+    &:nth-child(5),&:nth-child(6){
+      grid-row: 4 / span 2;
+      justify-content: flex-end;
+      .about__content{
+        text-align: left;
+        background: rgba(197, 138, 96, 0.95);
+        clip-path: polygon(0 0,100% 150px,100% 100%,0 100%);
+      }
+    }
+    &:nth-child(7),&:nth-child(8){
+      grid-row: 6 / span 2;
+      justify-content: flex-start;
+      .about__content{
+        text-align: left;
+        padding: 30px 42px 60px;
+        background: rgba(0, 99, 80, 0.95);
+        clip-path: polygon(0 0,100% 0,100% calc(100% - 150px),0 100%);
+      }
+    }
+    &:nth-child(9),&:nth-child(10){
+      grid-row: 7 / span 2;
+      justify-content: flex-end;
+      .about__content{
+        justify-content: flex-end;
+        text-align: right;
+        background: rgba(0, 99, 80, 0.95);
+        clip-path: polygon(0 150px,100% 0,100% 100%,0 100%);
+      }
+      .about__text{
+        margin-left: auto;
+      }
+    }
+    &:nth-child(11),&:nth-child(12){
+      grid-row: 9 / span 2;
+      justify-content: flex-start;
+      .about__content{
+        text-align: left;
+        padding: 30px 42px 60px;
+        background: rgba(0, 99, 80, 0.95);
+        clip-path: polygon(0 0,100% 0,100% calc(100% - 150px),0 100%);
+      }
+
+    }
+    &:nth-child(13),&:nth-child(14){
+      grid-row: 10 / span 2;
+      justify-content: flex-end;
+      .about__content{
+        justify-content: flex-end;
+        text-align: right;
+        background: rgba(0, 99, 80, 0.95);
+        clip-path: polygon(0 150px,100% 0,100% 100%,0 100%);
+      }
+      .about__text{
+        margin-left: auto;
+      }
+    }
+
+    &:nth-child(3){
+      justify-content: flex-start;
+      .about__content{
+        text-align: left;
+        background: rgba(97, 175, 170, 0.95);
+        padding: 30px 42px 60px;
+        clip-path: polygon(0 0,100% 0,100% calc(100% - 150px),0 100%);
+      }
+    }
+    &:nth-child(4){
+      justify-content: center;
+      padding: 0 0 150px 0;
+      .about__content{
+        text-align: left;
+        padding: 0 10px 0 150px;
+      }
+      .about__text{
+        width: 45%;
+      }
+    }
+    &:nth-child(even){
+      grid-column: 2;
+    }
+
+    &:nth-child(odd){
+      grid-column: 1;
+    }
+  }
+  &__img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  &__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 150px;
+    padding: 60px 42px 30px;
+  }
+  &__text{
+    width: 40%;
+    font-family: "Mont";
+    font-weight: 500;
+    font-size: min(vw(24), 24px);
+    line-height: 1.6em;
+    color: #EAF1FF;
+  }
+  &__title{
+    font-family: "Mont";
+    font-weight: 500;
+    font-size: min(vw(18), 18px);
+    line-height: 1.8em;
+    text-transform: uppercase;
+    color: #EAF1FF;
+    margin-bottom: 10px;
+  }
+  &__logo{
+    width: 200px;
+    height: 175px;
+    margin-bottom: 50px;
+  }
+  .title{
+    height: min(vw(56), 56px);
+  }
+}
+
+.snake{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  &-wrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 1px;
+  }
+
+}
+
+@media screen and (max-width: 1440px){
+  .about{
+    &__logo{
+      width: 136px;
+      height: 118px;
+      margin-bottom: 30px;
+    }
+    &__text{
+      font-size: 18px;
+
+    }
+    &__title{
+      font-size: 12px;
+    }
+    &__list{
+      grid-template-rows: 100px 375px repeat(3, 375px 100px 375px);
+      grid-gap: 20px;
+      padding: 40px 20px 90px;
+    }
+    &__content{
+      min-height: 100px;
+      padding: 42px 28px 30px;
+    }
+    &__el{
+      &:nth-child(1){
+        clip-path: polygon(0 0,100% 120px,100% 100%,0 100%);
+      }
+      &:nth-child(2){
+        clip-path: polygon(0 120px,100% 0,100% 100%,0 100%);
+      }
+      &:nth-child(4n+3){
+        clip-path: polygon(0 0,100% 0,100% calc(100% - 120px),0 100%);
+      }
+      &:nth-child(4n+4){
+        clip-path: polygon(0 0,100% 0,100% 100%,0 calc(100% - 120px));
+      }
+      &:nth-child(4n+5){
+        clip-path: polygon(0 120px,100% 0,100% 100%,0 100%);
+      }
+      &:nth-child(4n+6){
+        clip-path: polygon(0 0,100% 120px,100% 100%,0 100%);
+      }
+    }
+    .about__el:nth-child(1) .about__content, .about__el:nth-child(2) .about__content{
+      clip-path: polygon(0 0, 100% 85px, 100% 100%, 0 100%);
+    }
+    .about__el:nth-child(3) .about__content{
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 85px), 0 100%);
+    }
+    .about__el:nth-child(5) .about__content, .about__el:nth-child(6) .about__content{
+      clip-path: polygon(0 0, 100% 85px, 100% 100%, 0 100%);
+    }
+    .about__el:nth-child(7) .about__content, .about__el:nth-child(8) .about__content{
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 85px), 0 100%);
+    }
+    .about__el:nth-child(9) .about__content, .about__el:nth-child(10) .about__content{
+      clip-path: polygon(0 85px, 100% 0, 100% 100%, 0 100%);
+    }
+    .about__el:nth-child(11) .about__content, .about__el:nth-child(12) .about__content{
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 85px), 0 100%);
+    }
+    .about__el:nth-child(13) .about__content, .about__el:nth-child(14) .about__content{
+      clip-path: polygon(0 85px, 100% 0, 100% 100%, 0 100%);
+    }
+    .about__el:nth-child(4) .about__content{
+      padding: 0 10px 0 50px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 1023px){
+  .about{
+    &__logo{
+      width: 77px;
+      height: 67px;
+      margin-bottom: 20px;
+    }
+    &__text{
+      font-size: 14px;
+      line-height: 18px;
+    }
+    &__title{
+      font-size: 12px;
+      line-height: 1em;
+    }
+    &__list{
+      grid-template-rows: 50px 280px repeat(3, 280px 50px 280px);
+      grid-gap: 10px;
+      padding: 40px 10px 90px;
+    }
+    &__content{
+      min-height: 100px;
+      padding: 32px 15px 10px;
+    }
+    &__el{
+      &:nth-child(1){
+        clip-path: polygon(0 0,100% 60px,100% 100%,0 100%);
+      }
+      &:nth-child(2){
+        clip-path: polygon(0 60px,100% 0,100% 100%,0 100%);
+      }
+      &:nth-child(4n+3){
+        clip-path: polygon(0 0,100% 0,100% calc(100% - 60px),0 100%);
+      }
+      &:nth-child(4n+4){
+        clip-path: polygon(0 0,100% 0,100% 100%,0 calc(100% - 60px));
+      }
+      &:nth-child(4n+5){
+        clip-path: polygon(0 60px,100% 0,100% 100%,0 100%);
+      }
+      &:nth-child(4n+6){
+        clip-path: polygon(0 0,100% 60px,100% 100%,0 100%);
+      }
+    }
+    .about__el:nth-child(1) .about__content, .about__el:nth-child(2) .about__content{
+      clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
+    }
+    .about__el:nth-child(3) .about__content{
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 0 100%);
+      padding: 15px 15px 30px;
+    }
+    .about__el:nth-child(5) .about__content, .about__el:nth-child(6) .about__content{
+      clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
+    }
+    .about__el:nth-child(7) .about__content, .about__el:nth-child(8) .about__content{
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 0 100%);
+      padding: 15px 15px 30px;
+    }
+    .about__el:nth-child(9) .about__content, .about__el:nth-child(10) .about__content{
+      clip-path: polygon(0 50px, 100% 0, 100% 100%, 0 100%);
+    }
+    .about__el:nth-child(11) .about__content, .about__el:nth-child(12) .about__content{
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 0 100%);
+      padding: 15px 15px 30px;
+    }
+    .about__el:nth-child(13) .about__content, .about__el:nth-child(14) .about__content{
+      clip-path: polygon(0 50px, 100% 0, 100% 100%, 0 100%);
+    }
+    .about__el:nth-child(4){
+      padding: 0 0 60px 0;
+      .about__content{
+        padding: 0 10px 0 50px;
+      }
+      .about__text{
+        width: initial;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px){
+  .about{
+    &__list{
+      grid-template-rows: 230px;
+      grid-template-columns: minmax(230px, 1fr);
+      grid-auto-rows:  minmax(230px, 1fr);
+      grid-gap: 10px;
+      padding: 0 10px 90px;
+    }
+    &__content{
+      min-height: 100px;
+      padding: 32px 15px 10px;
+    }
+    &__el:nth-child(1n){
+      height: 100%;
+      justify-content: flex-end;
+      align-items: flex-end;
+      clip-path: none;
+      grid-column: 1;
+      grid-row: auto;
+      z-index: 5;
+    }
+    .about__el{
+      .about__content:not(.f){
+        width: 100%;
+        clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
+        padding: 35px 15px 10px;
+        min-height: 60px;
+      }
+      .about__text{
+        margin: 0 auto 0 0;
+        text-align: left;
+      }
+    }
+  }
+}

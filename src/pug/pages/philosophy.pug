@@ -1,0 +1,62 @@
+extends ../layout/main
+block variable
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="/wp-content/themes/pokrovsky/assets/styles/main.min.css")
+block scripts
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/libs.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/snap.svg.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/index.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/view.js')
+    //script( src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCvIwpQlmn08p4nR3bND8v3PBuMrWNMsZM&callback=initMap')
+
+
+block content
+    section.philosophy
+        include ./includes/breadcrumb
+        h1.title Філософія проєкту
+        .philosophy__bg
+
+        .philosophy__bg-place
+        .philosophy__right Pokrovsky Apart Complex - відображення твоїх бажань.
+            svg( width="701" height="547" viewBox="0 0 701 547" fill="none" preserveAspectRatio='none' xmlns="http://www.w3.org/2000/svg").philosophy__bg-house
+                path( d="M3.5 543.5V114.089L697.5 4.09839V543.5H3.5Z"  stroke-width="7")
+
+        .philosophy__left
+            .philosophy__title Ти довго чекав цього моменту.
+            .philosophy__text Моменту жити для себе. Більше не чекай. Не відкладай себе на потім. Почни жити тут і зараз. Pokrovsky Apart Complex
+            .philosophy__list
+                .philosophy__el
+                    .philosophy__icon.philosophy__icon-point
+                        +svg('point')
+                    span Рівне, Костромська,73,
+                .philosophy__el
+                    .philosophy__icon.philosophy__icon-user
+                        +svg('user')
+                    span Центр продажу квартир
+                .philosophy__el
+                    .philosophy__icon.philosophy__icon-call
+                        +svg('phone')
+                    span 067 360 28 26
+
+            a(href='#').philosophy__button.button-hover Обрати </br> квартиру
+                .bg-small-left
+                    include ../../static/small-house.php
+
+
+
+
+
+block footer
+
+    footer.footer.footer__small
+        include ../includes/menu
+        include ../includes/footer
+
+
+    // include ../pages/includes/forms
+block header
+    header.header.header-transparent
+        include ../includes/header.pug

@@ -1,0 +1,148 @@
+.view{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  .title{
+    z-index: 9;
+  }
+  &__slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    //justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    z-index: 5;
+    overflow: auto hidden;
+    &::-webkit-scrollbar{
+      width: 0;
+      height: 0;
+    }
+    canvas{
+      //position: absolute;
+      //top: 0;
+      //left: 0;
+      display: inline-block;
+      height: 100vh;
+      width: 100vw;
+      z-index: 5558;
+    }
+  }
+  &__el{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    img{
+      display: inline-block;
+      height: 100vh;
+      width: 100vw;
+      object-fit: cover;
+    }
+  }
+  &__arrow{
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    width: 60px;
+    height: 45px;
+    z-index: 50;
+    cursor: pointer;
+    svg{
+      fill: #C58A60;
+    }
+  }
+  &__left{
+    left: 50px;
+    transform: translate(0, -50%)rotate(-180deg);
+  }
+  &__right{
+    right: 50px;
+    transform: translate(0, -50%);
+  }
+  &__amount{
+    position: absolute;
+    right: 50px;
+    bottom: 110px;
+    display: flex;
+    align-items: center;
+    font-family: "Mont";
+    font-weight: 500;
+    text-align: right;
+    color: #FFFFFF;
+    z-index: 6;
+    &-current{
+      font-size: 56px;
+      line-height: 66px;
+      letter-spacing: 0.02em;
+      margin: 0 3px;
+    }
+    &-all{
+      font-size: 24px;
+      line-height: 1em;
+      margin: 0 3px;
+    }
+  }
+  &__button{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin: 0 0 0 55px;
+
+    font-family: "Mont";
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1em;
+    text-decoration: none;
+    color: #FFFFFF;
+    z-index: 9;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .view{
+    &__arrow{
+      width: 30px;
+      height: 23px;
+    }
+    &__amount{
+      &-current{
+        font-size: 36px;
+        line-height: 1em;
+      }
+      &-all{
+        font-size: 18px;
+        line-height: 1em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .view{
+    &__left{
+      left: 20px;
+    }
+    &__right{
+      right: 20px;
+    }
+    &__amount{
+     right: 20px;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .view{
+    &__left{
+      left: 15px;
+    }
+    &__right{
+      right: 15px;
+    }
+    &__amount{
+     right: 15px;
+    }
+  }
+}

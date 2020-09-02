@@ -1,0 +1,191 @@
+.kvartira{
+  display: flex;
+  flex-direction: column;
+  //flex-wrap: wrap;
+  //align-content: flex-start;
+  height: 100%;
+  min-height: 100vh;
+  background: url("../images/menu.jpg") no-repeat center /cover;
+  &__render{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    //img{
+    //  height: 100%;
+    //  width: 100%;
+    //  object-fit: cover;
+    //}
+    svg{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 100%;
+      width: 100%;
+      z-index: 2;
+    }
+  }
+  &__param{
+    position: absolute;
+    top: 50%;
+    left: 105px;
+    transform: translate(0, -50%);
+
+    font-family: "Mont";
+    font-weight: 500;
+    font-size: min(vw(24), 24px);
+    line-height: 1em;
+    color: #EAF1FF;
+    z-index: 50;
+  }
+}
+
+.compass{
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  width: 64px;
+  transform: translate(0, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  font-family: "Mont";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1em;
+  text-align: center;
+  color: #EAF1FF;
+
+  z-index: 55;
+  img{
+    margin-top: 5px;
+  }
+}
+.list{
+  &-flat{
+    &__links{
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+
+      transform: translate(-50%,0);
+      width: 30.73%;
+      display: flex;
+      justify-content: space-between;
+
+      z-index: 55;
+    }
+    &__link{
+      font-family: "Mont";
+      font-weight: 500;
+      font-size: min(vw(24), 24px);
+      line-height: 1em;
+      text-align: center;
+      text-decoration-line: underline;
+      color: #EAF1FF;
+      margin: 0 5px;
+    }
+  }
+}
+.render-house{
+  transition: fill 0.4s ease-in ;
+  &:hover{
+    cursor: pointer;
+    fill: rgba(197, 138, 96, 0.75);
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .kvartira__param{
+    font-size: 18px;
+  }
+  .list-flat__link{
+    font-size: 18px;
+  }
+  .compass{
+    width: 56px;
+    font-size: 16px;
+  }
+}
+
+
+@media screen and (max-width: 1200px) {
+  .kvartira{
+    flex-direction: column;
+    align-content: flex-start;
+    padding: 0 0 175px;
+  }
+  .kvartira__render{
+    position: static;
+    height: initial;
+    margin: auto 0;
+    svg{
+      position: static;
+      transform: none;
+      top: 0;
+      left: 0;
+    }
+  }
+  .list-flat__links{
+    position: static;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    transform: none;
+    margin: auto 0;
+    order: 3;
+  }
+  .kvartira__param{
+    top: 40%;
+    left: 55px;
+  }
+  .compass{
+    top: 40%;
+    right: 20px;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+  .kvartira{
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 0 0 90px;
+  }
+  .list-flat__links{
+    //bottom: 90px;
+    margin: 15px 0 0;
+  }
+  .list-flat__link{
+    font-size: 16px;
+    margin: 0 10px 15px;
+  }
+  .kvartira__render{
+    margin: 0;
+    order: 2;
+  }
+  .kvartira__param{
+    position: relative;
+    font-size: 16px;
+    top: 0;
+    left: 0;
+    transform: none;
+    margin: auto 0 25px 50px;
+  }
+  .compass{
+    transform: none;
+    position: static;
+    //top: 33%;
+    width: 40px;
+    font-size: 14px;
+    margin: 0 15px 20px auto;
+  }
+}

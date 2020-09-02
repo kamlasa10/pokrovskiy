@@ -1,0 +1,58 @@
+.form__loader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.2);
+  visibility: hidden;
+  z-index: 50;
+  transition: visibility 0.3s;
+  &.active{
+    visibility: visible;
+  }
+}
+
+.lds-spinner {
+  color: gray;
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-spinner div {
+  transform-origin: 40px 40px;
+  animation: lds-spinner 1.2s linear infinite;
+}
+
+.lds-spinner div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 37px;
+  width: 6px;
+  height: 18px;
+  border-radius: 20%;
+  background: #fff;
+}
+
+@for $i from 1 through 12 {
+  .lds-spinner div:nth-child( #{$i} ) {
+    transform: rotate( $i*30deg);
+    animation-delay: #{-1.1 + $i/10}s;
+  }
+}
+
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,132 @@
+.documents{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  min-height: 100vh;
+  background: #2F5677;
+  padding-bottom: 130px;
+  &__wrap{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: auto;
+    grid-gap: 0 5%;
+    width: 90%;
+    max-width: 1550px;
+    margin: 0 auto;
+  }
+
+}
+.document{
+  position: relative;
+  width: 100%;
+  height: calc(100% - 50px);
+  min-height: 430px;
+  display:flex;
+  flex-wrap: wrap;
+  padding: 90px 40px 40px;
+  margin-bottom: 50px;
+  &__button{
+    position: relative;
+    margin: auto 0 15px var(--mrgn-button);
+    font-family: "Mont";
+    font-weight: 500;
+    font-size: min(vw(24), 24px);
+    line-height: 1em;
+    color: #EAF1FF;
+    text-decoration: none;
+    z-index: 2;
+
+  }
+  &__icon{
+    margin: auto 0 0 auto;
+  }
+  &__text{
+    font-family: "Mont";
+    font-weight: 500;
+    font-size: min(vw(24), 24px);
+    line-height: lh(38,24);
+    color: #EAF1FF;
+    text-decoration: none;
+  }
+  &__bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+  }
+  svg{
+    stroke: #61AFAA;
+    stroke-width: 7px;
+  }
+  .document__button svg{
+    stroke: #C58A60;
+  }
+}
+
+@media screen and (max-width: 1440px){
+  .documents{
+    &__wrap{
+      grid-gap: 30px;
+    }
+  }
+  .document{
+    margin: 0;
+    min-height: 330px;
+    padding: 70px 35px 30px;
+    &__text{
+      font-size: 18px;
+      line-height: lh(32,18);
+    }
+    &__button{
+      font-size: 18px;
+    }
+    &__icon{
+      height: 30px;
+      width: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px){
+  .documents{
+    &__wrap{
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      justify-content: center;
+    }
+  }
+  .document{
+    width: 45%;
+    margin: 0;
+  }
+  svg{
+    stroke-width: 4px;
+  }
+}
+
+
+@media screen and (max-width: 767px){
+  .document{
+    width: 100%;
+    max-width: 350px;
+    min-height: 230px;
+    padding: 50px 15px 20px;
+    &__text{
+      font-size: 14px;
+      line-height: lh(24,14);
+      margin-bottom: 30px;
+    }
+    &__button{
+      font-size: 16px;
+      margin: auto 0 5px var(--mrgn-button);
+    }
+    svg{
+      stroke-width: 2px;
+    }
+  }
+}

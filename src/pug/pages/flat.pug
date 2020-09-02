@@ -1,0 +1,97 @@
+extends ../layout/main
+block variable
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="/wp-content/themes/pokrovsky/assets/styles/main.min.css")
+    //link(rel='stylesheet', href="/wp-content/themes/pokrovsky/static/base.css")
+block scripts
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/libs.js')
+    //script(src='/wp-content/themes/pokrovsky/assets/scripts/scroll.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/snap.svg.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/index.js')
+
+
+block content
+    section.flat
+        include includes/breadcrumb
+        h1.title  Квартира 2С1
+        .flat__content
+            .flat__left
+                a(href="/").flat__param.button-hover
+                    |Обрати за <br>
+                    |параметрами
+                    .bg-small-left
+                        include ../../static/small-house.php
+                .compass.flat__compass
+                    |пн
+                    img(src='/wp-content/themes/pokrovsky/assets/images/icon/compass.svg')
+            .flat__img
+                img(src="/wp-content/themes/pokrovsky/assets/images/flat.png")
+            .flat__data
+                .flat__data-head
+                    div Загальна площа:
+                    div 20 935
+                        sup м2
+                    div Житлова площа:
+                    div 20 935
+                        sup м2
+                ul
+                    li.flat__data-el
+                        .flat__data-name Передпокій:
+                        .flat__data-res
+                            span.js-flat__data 16.32
+                            | М
+                            sub 2
+                    li.flat__data-el
+                        .flat__data-name Кухня-їдальня:
+                        .flat__data-res
+                            span.js-flat__data 5.5
+                            | М
+                            sub 2
+                    li.flat__data-el
+                        .flat__data-name Спальня 1:
+                        .flat__data-res
+                            span.js-flat__data 13.85
+                            | М
+                            sub 2
+                    li.flat__data-el
+                        .flat__data-name Спальня 2:
+                        .flat__data-res
+                            span.js-flat__data 126.32
+                            | М
+                            sub 2
+                    li.flat__data-el
+                        .flat__data-name Спальня 3:
+                        .flat__data-res
+                            span.js-flat__data 15.56
+                            | М
+                            sub 2
+                    li.flat__data-el
+                        .flat__data-name Вітальня:
+                        .flat__data-res
+                            span.js-flat__data 13.85
+                            | М
+                            sub 2
+
+
+
+
+        .list-buttons
+            a(href='#').list-flat__button.button-hover Завантажити </br> PDF планування
+                .bg-small-left
+                    include ../../static/small-house.php
+            a(href='#').list-flat__button.button-hover Дізнатися </br> ціну
+                .bg-small-left
+                    include ../../static/small-house.php
+
+block footer
+    footer.footer
+        include ../includes/menu
+        include ../includes/footer
+        include ../pages/includes/forms
+
+block header
+    header.header.header-bg-grey
+        include ../includes/header.pug

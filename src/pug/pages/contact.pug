@@ -1,0 +1,83 @@
+extends ../layout/main
+block variable
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="/wp-content/themes/pokrovsky/assets/styles/main.min.css")
+block scripts
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/libs.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/snap.svg.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/index.js')
+    //script(src='/wp-content/themes/pokrovsky/assets/scripts/scroll.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/contact.js')
+    //script( src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCvIwpQlmn08p4nR3bND8v3PBuMrWNMsZM&callback=initMap')
+
+
+block content
+    section.contact
+        include ./includes/breadcrumb
+        h1.title Контакти
+        .contact__wrap
+            .contact__maps
+                +img('contact/map.png')
+                .map__wrap
+                    svg( width="270" height="210" id="svg-bg" viewBox="0 0 270 210" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg").map__bg
+                        path( d="M3.5 206.5L3.5 45.6431L266.5 4.09631V206.5L3.5 206.5Z" fill="#2F5677" fill-opacity="0.95" stroke="#61AFAA" stroke-width="7")
+                    a(href='#').map__button.button-hover
+                        | Відкрити <br> на карті
+                        .bg-small-right
+                            include ../../static/small-house.php
+            .contact__info
+                ul.info__list
+                    li.info__el
+                        .info__title.info__icon.info__locate Адреса:
+                        p.info__text м. Рівне, вул. Орлова, 2
+                    li.info__el
+                        .info__title.info__icon.info__address Адреса відділу продажу:
+                        p.info__text м. Рівне, вул.Костромська, 73
+                    li.info__el
+                        .info__title.info__icon.info__time Час роботи відділу продажу:
+                        p.info__text пн-вт:	09:00–18:00
+                        p.info__text сб: 10.00-16.00
+                        p.info__text вс: вихідний
+                    li.info__el
+                        .info__title.info__icon.info__mail Наш e-mail:
+                        p.info__text pokrovsky@renome.ua
+                    li.info__el
+                        .info__title.info__icon.info__phone Телефон:
+                        p.info__text 067 360 28 26
+            .contact__forms
+                form(name='contact').form
+                    fieldset.form__group
+                        legend.form__title Надіслати <br> повідомлення
+                        label.form__label
+                            input( name='name' type='text' placeholder='Ім’я:' data-errormessage='Имя не введено').form__input.js-form__input
+                            span.js-result-text.form__error
+                        label.form__label
+                            input(id='js-tel-mask' name='tel' type='text' placeholder='+3 8 (0_ _)   _ _   _ _   _ _ _' data-errormessage='введите номер').form__input.js-form__input.js-tel-mask
+                            span.js-result-text.form__error
+                        label.form__label
+                            textarea(name='message' placeholder='Повідомлення' ).form__input.js-form__input
+                            span.js-result-text.form__error
+                        label.form__label
+                            input(name='time' type='time' placeholder='Вкажіть зручний час:' ).form__input.js-form__input
+                            span.js-result-text.form__error
+                    button(type='button').form__submit.js-form__submit.button-hover
+                        | Надіслати
+                        .bg-small-right
+                            include ../../static/small-house.php
+
+
+
+
+
+block footer
+    footer.footer.footer__small
+        include ../includes/menu
+        include ../includes/footer
+
+    // include ../pages/includes/forms
+block header
+    header.header.header-bg-all
+        include ../includes/header.pug

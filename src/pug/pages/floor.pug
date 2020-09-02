@@ -1,0 +1,74 @@
+extends ../layout/main
+block variable
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="/wp-content/themes/pokrovsky/assets/styles/main.min.css")
+    //link(rel='stylesheet', href="/wp-content/themes/pokrovsky/static/base.css")
+block scripts
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/libs.js')
+    //script(src='/wp-content/themes/pokrovsky/assets/scripts/scroll.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/snap.svg.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/index.js')
+
+
+block content
+    section.floor
+        include includes/breadcrumb
+        h1.title  Обрати квартиру
+        .floor__filter-wrap.js-floor__filter
+            .floor__filter
+                ul.floor__list
+
+                    li(data-section='1').floor__list-el 1
+                    li(data-section='2').floor__list-el 2
+                    li(data-section='3').floor__list-el 3
+                    li(data-section='4').floor__list-el 4
+                .floor__filter-arrow
+                .floor__filter-current.js-section-current 1
+                .floor__filter-name Секція
+
+            .floor__filter
+                ul.floor__list
+                    li(data-floor='1').floor__list-el 1
+                    li(data-floor='2').floor__list-el 2
+                    li(data-floor='3').floor__list-el 3
+                    li(data-floor='4').floor__list-el 4
+                    li(data-floor='5').floor__list-el 5
+                    li(data-floor='6').floor__list-el 6
+                    li(data-floor='7').floor__list-el 7
+                .floor__filter-arrow
+                .floor__filter-current.js-floor-current 1
+                .floor__filter-name Поверх
+
+
+        .floor__render
+            svg( viewBox="0 0 1920 1080" fill="transparent" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg")
+                image( height='100%' width='100%' x="0" y="0" xlink:href='/wp-content/themes/pokrovsky/assets/images/plan.png')
+
+
+        a(href="#" ).floor__param.button-hover
+            |Обрати за <br>
+            |параметрами
+            .bg-small-left
+                include ../../static/small-house.php
+
+        .compass
+            |пн
+            img(src='/wp-content/themes/pokrovsky/assets/images/icon/compass.svg')
+
+        .list-flat__links
+            a(href='#').list-flat__link 1-Кімнатні
+            a(href='#').list-flat__link 2-Кімнатні
+            a(href='#').list-flat__link 3-Кімнатні
+
+block footer
+    footer.footer
+        include ../includes/menu
+        include ../includes/footer
+    // include ../pages/includes/forms
+
+block header
+    header.header.header-bg-grey
+        include ../includes/header.pug

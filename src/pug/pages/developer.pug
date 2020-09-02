@@ -1,0 +1,57 @@
+extends ../layout/main
+block variable
+
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="/wp-content/themes/pokrovsky/assets/styles/main.min.css")
+    //link(rel='stylesheet', href="/wp-content/themes/pokrovsky/static/base.css")
+block scripts
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/libs.js')
+    //script(src='/wp-content/themes/pokrovsky/assets/scripts/scroll.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/snap.svg.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/index.js')
+
+block content
+    section.developer
+        include includes/breadcrumb
+        h1.title  Девелопер
+        .developer__content
+            .developer__block
+                .developer__logo
+                    +img('icon/developer.svg')
+                .developer__block-title РЕНОМЕ – група компаній, що рухає технології в майбутнє.
+                .developer__block-text Наші інтереси та активи холдингу зосереджені в галузі IT-технологій та рішень для фінансового сектору; в сфері будівництва, девелопменту, а також виробництва металопластикових конструкцій.
+            .developer__block.developer__house
+                .developer__block-title Сьогодні РЕНОМЕ — лідер на ринку нерухомості.
+                .developer__block-text  RENOME Comfort - девелоперська компанія повного циклу у складі холдингу РЕНОМЕ.
+                .developer__block-text  RENOME Comfort упродовж 16 років успішно реалізовує проекти житлової та комерційної нерухомості різної складності.
+            .developer__line
+            .developer__block
+                ul.developer__list.developer__list-tick
+                    li.developer__list-el Ми є трендесеттером на ринку нерухомості Рівного;
+                    li.developer__list-el Високий рівень відповідальності перед клієнтами, задекларований юридично;
+                    li.developer__list-el Значний кредит довіри в аудиторії;
+                    li.developer__list-el Працюємо лише з кращими проєктантами країни, перевіреними підрядниками та постачальниками сертифікованих матеріалів.
+            .developer__block
+                .developer__block-title Чому понад 1500 клієнтів обрали нерухомість від РЕНОМЕ?
+                ul.developer__list.developer__list-dots
+                    li.developer__list-el Ми є трендесеттером на ринку нерухомості Рівного;
+                    li.developer__list-el Високий рівень відповідальності перед клієнтами, задекларований юридично;
+                    li.developer__list-el Значний кредит довіри в аудиторії;
+                    li.developer__list-el Працюємо лише з кращими проєктантами країни, перевіреними підрядниками та постачальниками сертифікованих матеріалів.
+            .developer__block.developer__border
+                .developer__title У своїй роботі команда девелопера сповідує принципи людиноцентризму, "розумної" архітектури, збереження репутації, відкритості та операційної досконалості.
+            .developer__block
+                .developer__block-text RENOME Comfort. <br>
+                    | Нове покоління нерухомості.
+block footer
+    footer.footer.footer__small
+        include ../includes/menu
+        include ../includes/footer
+    // include ../pages/includes/forms
+
+block header
+    header.header.header-bg-blue
+        include ../includes/header.pug

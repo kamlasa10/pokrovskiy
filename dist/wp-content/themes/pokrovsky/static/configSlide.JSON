@@ -1,0 +1,34 @@
+[
+  {
+    "image":  "/wp-content/themes/pokrovsky/assets/images/slider/1.jpg",
+    "imageId" : "imageSlideId1",
+    "title": "Живи <br/> зараз",
+    "meta": "Свобода/Натхнення",
+    "href": "#",
+    "button": "Обрати квартиру"
+  },
+  {
+    "image":  "/wp-content/themes/pokrovsky/assets/images/slider/2.jpg",
+    "imageId" :  "imageSlideId2",
+    "title": "Живи <br/> комфортно",
+    "meta": "Ергономічність/Продуманість",
+    "href": "#",
+    "button": "Зручності для тебе "
+  },
+  {
+    "image":  "/wp-content/themes/pokrovsky/assets/images/slider/3.jpg",
+    "imageId" :  "imageSlideId3",
+    "title": "Живи <br/> для себе",
+    "meta": "Ти/Твоє",
+    "href": "#",
+    "button": "Філософія комплексу"
+  },
+  {
+    "image":  "/wp-content/themes/pokrovsky/assets/images/slider/4.jpg",
+    "imageId" :  "imageSlideId4",
+    "title": "Живи <br/> з краєвидом",
+    "meta": "Простір/Комьюніті",
+    "href": "#",
+    "button": "План комплексу"
+  }
+]

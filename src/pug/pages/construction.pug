@@ -1,0 +1,211 @@
+extends ../layout/main
+block variable
+    -
+        var data = [
+            {
+                month : 5,
+                year: 2016,
+                image: '1.jpg',
+                text: 'Переглянути фотозвіт',
+                id: 1
+            },
+            {
+                month : 6,
+                year: 2020,
+                image: '2.jpg',
+                text: 'Переглянути  фотозвіт',
+                id: 2
+            },
+            {
+                month : 12,
+                year: 2017,
+                image: '3.jpg',
+                text: 'Переглянути фотозвіт',
+                id: 3
+            },
+            {
+                month : 10,
+                year: 2018,
+                image: '4.jpg',
+                text: 'Переглянути фотозвіт',
+                id: 4
+            },
+            {
+                month : 2,
+                year: 2020,
+                image: '6.jpg',
+                text: 'Переглянути фотозвіт',
+                id: 5
+            },
+            {
+                month : 3,
+                year: 2019,
+                image: '5.jpg',
+                text: 'Переглянути фотозвіт',
+                id: 6
+            },
+            {
+                month : 1,
+                year: 2016,
+                image: '1.jpg',
+                text: 'Переглянути фотозвіт',
+                id: 7
+            },
+            {
+                month : 5,
+                year: 2019,
+                image: '4.jpg',
+                text: 'Переглянути фотозвіт',
+                id: 8
+            },
+            {
+                month : 8,
+                year: 2018,
+                image: '6.jpg',
+                text: 'Переглянути фотозвіт',
+                id: 9
+            },
+            {
+                month : 7,
+                year: 2018,
+                image: '3.jpg',
+                text: 'Переглянути фотозвіт',
+                id: 10
+            },
+        ]
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="/wp-content/themes/pokrovsky/assets/styles/main.min.css")
+block scripts
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/libs.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/snap.svg.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/index.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/construction.js')
+    //script( src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCvIwpQlmn08p4nR3bND8v3PBuMrWNMsZM&callback=initMap')
+
+
+block content
+    section.construction
+        include ./includes/breadcrumb
+        h1.title Хід <br> будівництва
+        .construction__wrap
+            .construction__left
+                .construction__filter-wrap
+                    .construction__filter
+                        svg( width="100%" height="100%" viewBox="0 0 430 194" fill="none" preserveAspectRatio='none' xmlns="http://www.w3.org/2000/svg").construction__filter-bg
+                            path( d="M426.5 190.5V71.1202L3.5 4.09822V190.5H426.5Z" stroke="#C58A60")
+
+                        span.construction__filter-name Фільтр:
+                        label(for='year').construction__filter-list.js-construction__filter-year
+                            input(type="radio" name="year2" value="not_changed" id='year')
+                            input(type="radio" name="year2" class="" value="not_changed" id="year-bg" checked)
+                            label(for="year-bg").select-bg
+                            .select__items.js-select__items
+                                input(type="radio" name="year" value="all" id="year[0]" checked)
+                                label(for="year[0]").construction__filter-year Усі роки
+                                input(type="radio" name="year" value="2020" id="year[1]")
+                                label(for="year[1]").construction__filter-year 2020
+                                input(type="radio" name="year" value="2019" id="year[2]")
+                                label(for="year[2]").construction__filter-year 2019
+                                input(type="radio" name="year" value="2018" id="year[3]")
+                                label(for="year[3]").construction__filter-year 2018
+                                input(type="radio" name="year" value="2017" id="year[4]")
+                                label(for="year[4]").construction__filter-year 2017
+                                input(type="radio" name="year" value="2016" id="year[5]")
+                                label(for="year[5]").construction__filter-year 2016
+                        label(for='month').construction__filter-list.js-construction__filter-month
+                            input(type="radio" name="month2" value="not_changed" id='month')
+                            input(type="radio" name="month2" value="not_changed" id="month-bg" checked)
+                            label(for="month-bg").select-bg
+                            .select__items.js-select__items
+                                input(type="radio" name="month" value="all" id="month[0]" checked)
+                                label(for="month[0]").construction__filter-year Усі місяці
+                                input(type="radio" name="month" value="1" id="month[1]")
+                                label(for="month[1]").construction__filter-year Січень
+                                input(type="radio" name="month" value="2" id="month[2]")
+                                label(for="month[2]").construction__filter-year Лютий
+                                input(type="radio" name="month" value="3" id="month[3]")
+                                label(for="month[3]").construction__filter-year Березень
+                                input(type="radio" name="month" value="4" id="month[4]")
+                                label(for="month[4]").construction__filter-year Квітень
+                                input(type="radio" name="month" value="5" id="month[5]")
+                                label(for="month[5]").construction__filter-year Травень
+                                input(type="radio" name="month" value="6" id="month[6]")
+                                label(for="month[6]").construction__filter-year Червень
+                                input(type="radio" name="month" value="7" id="month[7]")
+                                label(for="month[7]").construction__filter-year Липень
+                                input(type="radio" name="month" value="8" id="month[8]")
+                                label(for="month[8]").construction__filter-year Серпень
+                                input(type="radio" name="month" value="9" id="month[9]")
+                                label(for="month[9]").construction__filter-year Вересень
+                                input(type="radio" name="month" value="10" id="month[10]")
+                                label(for="month[10]").construction__filter-year Жовтень
+                                input(type="radio" name="month" value="11" id="month[11]")
+                                label(for="month[11]").construction__filter-year Листопад
+                                input(type="radio" name="month" value="12" id="month[12]")
+                                label(for="month[12]").construction__filter-year Грудень
+                    .construction__title Здача об’єкту: <br> 1 черга – 2022 рік.
+                    .construction__text У першій секції завершено монтаж дерев'яного каркасу та утеплення скатної покрівлі. Триває влаштування покрівельної панелі. Завершено укладання першого та другого шару мінеральної вати, пофарбовано фасад
+
+            .construction__content-wrap
+                .construction__content.js-construction
+
+                    // each i in [{month : 5,year: 2016,image: '1.jpg',text: 'Переглянути фотозвіт',id: 1}]
+                    each i in data
+                        .card.js-pagination__card(data-month=i.month data-year=i.year data-id=i.id )
+                            .card__date
+                                +svg('date').card__date-icon
+                                span.js-card__date-text 16.12.2016
+                            .card__img
+                                +img('construction/'+i.image)
+                            // p.card-text Запрошуємо на попередній запис!
+                            .card__button.button-hover.js-card__button(data-id=i.id)= i.text
+                                .bg-small-left
+                                    include ../../static/small-house.php
+        .popup.js-popup
+            .popup__close.js-popup__close
+            .popup__top
+                .popup__date
+                    +svg('date').popup__date-icon
+                    span.popup__date-text.js-popup__date-text 22 Червня 2020
+            .popup__slider.js-popup__slider
+                .popup__image
+                    +img('/construction/1.jpg')
+                .popup__image
+                    +img('/construction/2.jpg')
+                .popup__image
+                    +img('/construction/3.jpg')
+                .popup__image
+                    +img('/construction/4.jpg')
+                .popup__image
+                    +img('/construction/5.jpg')
+                .popup__image
+                    +img('/construction/6.jpg')
+                .popup__image
+                    +img('/construction/2.jpg')
+                .popup__image
+                    +img('/construction/4.jpg')
+            .popup__bottom
+                .popup__left.js-popup__left
+                    svg( width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path( d="M15.8775 0L9 6.87748L2.12252 0L0 2.12245L9 11.1225L18 2.12245L15.8775 0Z")
+                .popup__right.js-popup__right
+                    svg( width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path( d="M15.8775 0L9 6.87748L2.12252 0L0 2.12245L9 11.1225L18 2.12245L15.8775 0Z")
+            svg( width="637" height="497" viewBox="0 0 637 497" fill="none" preserveAspectRatio="xMinYMid meet" xmlns="http://www.w3.org/2000/svg").popup__bg
+                path( d="M632 492V105.215L5 5.85474V492H632Z" stroke="#C58A60" stroke-width="10")
+
+
+block footer
+
+    footer.footer.footer__small
+        include ../includes/menu
+        include ../includes/footer
+
+
+    // include ../pages/includes/forms
+block header
+    header.header.header-bg-blue
+        include ../includes/header.pug

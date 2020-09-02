@@ -1,0 +1,93 @@
+.thanks {
+  margin: 0 auto;
+  &-wrap {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-left: var(--padding-wrap);
+    align-items: center;
+    color: #7E8888;
+    background: url("../images/menu.jpg") no-repeat center/cover;
+    @include to(1023px){
+      padding: var(--padding-wrap);
+    }
+    .wb-all__fishka{
+      width: initial;
+      @include to(1023px){
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 50px;
+    font-weight: 700;
+    line-height: 0.9em;
+    font-size: 100px;
+    text-align: center;
+    animation: tada 3s infinite;
+    color: #EAF1FF;
+    @include to(1023px) {
+      font-size: 70px;
+      line-height: 1em;
+      margin-bottom: 30px;
+    }
+    @include to(578px) {
+      font-size: 50px;
+      line-height: 1em;
+      margin-bottom: 30px;
+    }
+
+    &-small {
+      display: block;
+      font-size: 50px;
+
+      @include to(578px) {
+        font-size: 30px;
+      }
+    }
+  }
+
+  &__subtitle {
+    padding: 0 10px;
+    text-align: center;
+    font-size: 20px;
+    color: #EAF1FF;
+    margin-bottom: 30px;
+  }
+
+  .link-wrap {
+    display: flex;
+    justify-content: space-between;
+
+    @include to(578px) {
+      flex-direction: column;
+    }
+
+    a {
+      margin: 0 15px;
+      padding: 10px 0;
+      display: flex;
+      min-width: 220px;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      border: 1px solid #EAF1FF;
+      color: #321321;
+      span {
+        z-index: 1;
+      }
+
+      &::before {
+        z-index: 0;
+      }
+
+      @include to(578px) {
+        margin: 20px auto;
+        width: 70%;
+        min-width: 200px;
+      }
+    }
+  }
+}

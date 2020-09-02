@@ -1,0 +1,198 @@
+.popup-form{
+  display: flex;
+  flex-direction: column;
+  border-left: 7px solid #EAF1FF;
+  border-right: 7px solid #EAF1FF;
+  padding: 150px 70px 0;
+  margin: 0 55px;
+  clip-path: polygon(0 85px, 100% 0, 100% 100%, 0 100%, 0 85px);
+  &-bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 555;
+    pointer-events: none;
+    background: rgba(0,0,0,0);
+    transition: background-color 0.4s ease-out, all 0.2s ease-out 0.3s;
+    &.active{
+      visibility: visible;
+      opacity: 1;
+      pointer-events: painted;
+      background: rgba(0,0,0,0.25);
+      transition: background-color 0.3s ease-out 0.5s;
+      .popup-form-wrap{
+        transition: all 0.5s cubic-bezier(1,0,.25,1);
+        transform: scale(1)translate(-50%, -50%);
+      }
+    }
+  }
+  &__group{
+    display: flex;
+    flex-direction: column;
+  }
+  &__title{
+    font-family: $default-font;
+    font-weight: 500;
+    font-size: min(vw(56), 56px);
+    line-height: lh(66,56);
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    margin-bottom: 55px;
+  }
+  &__label{
+    position: relative;
+  }
+  &__input{
+    display: inline-block;
+    width: 100%;
+    height: 45px;
+
+    font-family: $default-font;
+    font-weight: 500;
+    font-size: min(vw(24), 24px);
+    line-height: 1em;
+    color: #FFFFFF;
+    resize: none;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #61AFAA;
+    padding: 0 0 20px;
+    margin-bottom: 60px;
+    &::-webkit-scrollbar{
+      width: 0;
+    }
+    &::placeholder{
+      font-family: $default-font;
+      font-weight: 500;
+      font-size: 1em;
+      line-height: 1em;
+      color: #EAF1FF;
+    }
+  }
+  &__error{
+    position: absolute;
+    bottom: 45px;
+    left: 0;
+    font-family: $default-font;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1em;
+    color: #C58A60;
+  }
+  &__submit{
+    position: relative;
+    font-family: $default-font;
+    font-weight: 500;
+    font-size: min(vw(24), 24px);
+    line-height: 1em;
+    text-align: center;
+    color: #EAF1FF;
+    background: transparent;
+    border: none;
+    padding: 40px 0 30px;
+    margin: 0 var(--mrgn-button) 0 auto;
+    z-index: 1;
+    svg{
+      fill: #C58A60;
+    }
+  }
+  &-wrap{
+    padding: 40px 30px 100px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform:scale(0.1)translate(-50%, -50%);
+    //transform: matrix(1,.5,0.4,1,-100,-50)translate(-50%, -50%);
+    z-index: 4;
+    clip-path: polygon(0 100px, 100% 0, 100% 100%, 0 100%, 0 100px);
+    background: url("../images/menu.jpg")no-repeat center /cover;
+    transition: all 0.5s cubic-bezier(1,0,.25,1);
+  }
+  &__close{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 24px;
+    width: 24px;
+    margin: 0 0 15px auto;
+    cursor: pointer;
+    span{
+      position: absolute;
+      top: 50%;
+      left: 0;
+      display: inline-block;
+      width: 100%;
+      height: 0;
+      border-bottom: 1px solid #ffffff;
+      border-top: 1px solid #ffffff;
+      transform-origin: center center;
+      transform: translate(0, -50%)rotate(45deg);
+      &:nth-child(1){
+        transform: translate(0, -50%)rotate(-45deg);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1440px){
+  .popup-form{
+    padding: 60px 30px 0;
+    border-width: 5px;
+    clip-path: polygon(0 60px, 100% 0, 100% 100%, 0 100%, 0 60px);
+    &__title{
+      font-size: 36px;
+      line-height: 42px;
+      margin-bottom: 30px;
+    }
+    &__input{
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    &__submit{
+      font-size: 18px;
+      padding: 25px 0 15px;
+    }
+    &-wrap{
+      padding: 20px 20px 50px;
+      clip-path: polygon(0 65px, 100% 0, 100% 100%, 0 100%, 0 65px);
+    }
+  }
+}
+@media screen and (max-width: 767px){
+  .popup-form{
+    padding: 40px 20px 0;
+    border-width: 2px;
+    margin: 0 7px;
+    clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%, 0 40px);
+    &__title{
+      font-size: 24px;
+      line-height: 30px;
+      margin-bottom: 25px;
+    }
+    &__input{
+      font-size: 16px;
+      padding: 0 0 10px;
+      margin-bottom: 25px;
+    }
+    &__submit{
+      font-size: 16px;
+      padding: 23px 0 13px;
+    }
+    &-wrap{
+      min-width: 250px;
+      padding: 13px 13px 30px;
+      clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%, 0 40px);
+    }
+  }
+}

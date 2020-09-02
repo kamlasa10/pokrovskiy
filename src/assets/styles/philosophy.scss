@@ -1,0 +1,240 @@
+.philosophy{
+  display: inline-block;
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  background: transparent;
+  &__bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    background: url("../images/philosophy/bg.jpg") no-repeat center /cover;
+    z-index: -2;
+    &-house{
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      display: inline-block;
+      z-index: 0;
+      stroke: #C58A60;
+    }
+
+    &-place{
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 33%;
+      display: inline-block;
+      background: rgba(47, 86, 119, 0.5);
+      z-index: -1;
+    }
+  }
+  &__right{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 37%;
+    width: min-content;
+    transform: translate(0, -50%);
+    display: inline-block;
+    padding: 190px 100px 90px;
+    font-family: "Mont";
+    font-weight: 500;
+    font-size: min(vw(56), 56px);
+    line-height: lh(66,56);
+    letter-spacing: 0.02em;
+    color: #EAF1FF;
+  }
+  &__left{
+    width: 21%;
+    margin: 0 0 0 9%;
+    display: flex;
+    flex-direction: column;
+  }
+  &__title{
+    font-family: "Mont";
+    font-weight: 500;
+    font-size: min(vw(36), 36px);
+    line-height: lh(48,36);
+    letter-spacing: 0.02em;
+    color: #EAF1FF;
+    margin-bottom: 30px;
+  }
+  &__text{
+    font-family: "Mont";
+    font-weight: 500;
+    font-size: min(vw(24), 24px);
+    line-height: lh(38,24);
+    color: #EAF1FF;
+    margin-bottom: 30px;
+  }
+  &__list{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  &__el{
+    display: flex;
+    align-items: center;
+
+    font-family: "Mont";
+    font-weight: 500;
+    font-size: min(vw(24), 24px);
+    line-height: lh(38,24);
+    color: #EAF1FF;
+  }
+  &__icon{
+    display: flex;
+    align-items: center;
+    width: 22px;
+    height: 22px;
+    margin-right: 30px;
+    svg{
+      width: 22px;
+      max-height: 22px;
+      fill: #61AFAA;
+    }
+
+
+  }
+  &__button{
+    position: relative;
+    margin: 0 0 0 var(--mrgn-button);
+    //padding: 30px 0 15px 0;
+    font-family: "Mont";
+    font-weight: 500;
+    font-size: min(vw(24), 24px);
+    line-height: 1em;
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+}
+
+@media screen and (max-width: 1440px){
+  .philosophy{
+    &__title{
+      font-size: 30px;
+      line-height: 42px;
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+    &__text{
+      font-size: 14px;
+      line-height: 24px;
+      margin-bottom: 10px;
+    }
+    &__el{
+      font-size: 14px;
+      line-height: 24px;
+    }
+    &__button{
+      font-size: 18px;
+      padding: 0;
+    }
+    &__left{
+      width: 25%;
+      margin: 0 0 0 7%;
+    }
+    &__right{
+      padding: 105px 40px 45px 75px;
+      font-size: 36px;
+      line-height: 48px;
+    }
+    &__icon{
+      width: 13px;
+      height: 16px;
+      margin-right: 15px;
+      svg{
+        width: 13px;
+        height: 16px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px){
+  .philosophy{
+    display: flex;
+    flex-direction: column;
+    &__bg{
+      &-place{
+        width: 45%;
+      }
+    }
+    &__title{
+      margin-bottom: 20px;
+    }
+    &__text{
+      line-height: 24px;
+      margin-bottom: 20px;
+    }
+    &__el{
+      line-height: 24px;
+    }
+    &__left{
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      justify-content: center;
+      width: 40%;
+      z-index: 0;
+    }
+    &__right{
+      padding: 70px 40px 30px 40px;
+      font-size: 24px;
+      line-height: 36px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 767px){
+  .philosophy{
+    display: flex;
+    flex-direction: column;
+    &__bg{
+      &-place{
+        display: none;
+      }
+    }
+    &__title{
+      font-size: 24px;
+      line-height: 30px;
+      margin: 0 0 15px;
+    }
+    &__text{
+      margin-bottom: 15px;
+    }
+    &__el{
+      line-height: 24px;
+    }
+    &__icon{
+      margin-right: 15px;
+    }
+    &__left{
+      position: static;
+      justify-content: center;
+      width: 100%;
+      z-index: 0;
+      margin: 60px 0 0;
+      padding: 20px 15px 90px;
+      background: rgba(47, 86, 119, 0.5);
+    }
+    &__right{
+      position: relative;
+      transform: none;
+      width: calc(100% - 30px);
+      margin: 0 auto;
+      padding: 60px 15px 20px;
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+}

@@ -1,0 +1,204 @@
+extends ../layout/main
+block variable
+    -
+        var db_range = [
+        {
+        id: 'total_square',
+        label: 'Загальна площа',
+        min: 0,
+        max: 788,
+        from : 0,
+        to : 788,
+        },
+
+        {
+        id: 'life_square',
+        label: 'Житлова площа',
+        min: 0,
+        max: 884,
+        from : 0,
+        to : 884,
+        },
+        {
+        id: 'room',
+        label: 'Кімнати',
+        min: 0,
+        max: 186,
+        from : 0,
+        to : 186,
+        },
+        ];
+        var db_filter = [
+        {
+        label: 'Кімната 2А',
+        total_square: 12,
+        life_square: 14,
+        room: 2,
+        section: 1,
+        floor : 49,
+        href: '#',
+        image: './assets/images/temp/0.jpg',
+        //ro : 11,
+        },
+        {
+        label: 'Кімната 24А',
+        total_square: 13,
+        life_square: 514,
+        room: 1,
+        section: 2,
+        floor : 35,
+        href: '/',
+        image: './assets/images/temp/0.jpg',
+        //ro : 11,
+        },
+        {
+        label: 'Кімната 232А',
+        total_square: 26,
+        life_square: 10,
+        room: 3,
+        section: 3,
+        floor : 11,
+        href: '/',
+        image: './assets/images/temp/0.jpg',
+        //ro : 11,
+        },
+        {
+        label: 'Кімната 254А',
+        total_square: 156,
+        life_square: 266,
+        room: 2,
+        section: 4,
+        floor : 14,
+        href: '/',
+        image: './assets/images/temp/0.jpg',
+        //ro : 13,
+        },
+        {
+        label: 'Кімната 298А',
+        total_square: 765,
+        life_square: 754,
+        room: 3,
+        section: 2,
+        href: '/',
+        image: './assets/images/temp/0.jpg',
+        //ro : 12,
+        floor : 21,
+        },
+        {
+        label: 'Кімната 112А',
+        total_square: 788,
+        life_square: 884,
+        room: 1,
+        section: 2,
+        floor : 8,
+        href: '/',
+        image: './assets/images/temp/0.jpg',
+        //ro : 11,
+        },
+        {
+        label: 'Кімната 452А',
+        total_square: 333,
+        life_square: 234,
+        room: 2,
+        section: 4,
+        href: '/',
+        image: './assets/images/temp/0.jpg',
+        //	ro : 11,
+        floor : 3,
+        },
+        ];
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="/wp-content/themes/pokrovsky/assets/styles/main.min.css")
+    //link(rel='stylesheet', href="/wp-content/themes/pokrovsky/static/base.css")
+block scripts
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/libs.js')
+    //script(src='/wp-content/themes/pokrovsky/assets/scripts/scroll.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/snap.svg.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/index.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/flatFilter.js')
+
+
+block content
+    section.chooseFlat
+        include includes/breadcrumb
+        h1.title  Обрати за параметрами
+        .chooseFlat__content
+            .chooseFlat__list-wrap
+                .chooseFlat__info.js-chooseFlat__info ничего не найдено
+                .chooseFlat__list
+                    each val, i in db_filter
+                        a(href= pagesLink[0].flat data-href= val.href data-image= val.image data-total_square= val.total_square data-life_square= val.life_square data-room= val.room data-floor= val.floor data-section= val.section).js-flat-item.chooseFlat__card
+                            img(src="/wp-content/themes/pokrovsky/assets/images/flat.png").chooseFlat__card-img
+                            .chooseFlat__card-info
+                                span Кількість кімнат:
+                                span= val.room
+                            .chooseFlat__card-info
+                                span Загальна площа:
+                                span= val.total_square
+                                    | м
+                                    sub 2
+                            .chooseFlat__card-info
+                                span Житлова площа:
+                                span= val.life_square
+                                    | м
+                                    sub 2
+                            .chooseFlat__card-info
+                                span Поверх:
+                                span= val.floor
+
+            .chooseFlat__filter-wrap
+                .chooseFlat__filter-head
+                .chooseFlat__filter
+                    .filter-scroll-wrap.js-filter-scroll-wrap.custom-scroll
+                        .checkbox-wrap
+                            span.u-filter__title.u-checkbox-list__title Секція:
+                            .u-checkbox-list-wrapper
+                                each val,i in ['1','2','3','4']
+                                    .u-checkbox-list-item.u-filter__checkbox
+                                        input.js-section.invisible( id="section" + i data-key="section" name="section[]" type="checkbox" value= i + 1)
+                                        label.u-filter__checkbox__label(for="section" + i)
+                                            span.u-filter__checkbox__text= val
+                                            svg( width="36" height="40" viewBox="0 0 36 40" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path( d="M1.67949 10.5773L18 1.1547L34.3205 10.5773V29.4226L18 38.8453L1.67949 29.4226V10.5773Z" )
+
+                        .checkbox-wrap
+                            span.u-filter__title.u-checkbox-list__title комнат:
+                            .u-checkbox-list-wrapper
+                                each val,i in ['1','2','3']
+                                    .u-checkbox-list-item.u-filter__checkbox
+                                        input.js-room.invisible( id="room" + i data-key="room" name="room[]" type="checkbox" value= i + 1)
+                                        label.u-filter__checkbox__label(for="room" + i)
+                                            span.u-filter__checkbox__text= val
+                                            svg( width="36" height="40" viewBox="0 0 36 40" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                path( d="M1.67949 10.5773L18 1.1547L34.3205 10.5773V29.4226L18 38.8453L1.67949 29.4226V10.5773Z" )
+                        ul.range-wrapper
+                            each v in db_range
+                                // range item
+                                li.range-item.js-range-item
+                                    h4.range-item__label=v.label
+                                    input.js-range-init(id= v.id type="hidden" data-from= v.from data-min= v.min data-to= v.to data-max= v.max)
+                                // range item
+                    .filter-nav-btn
+                        button(type="button").js-button_search.filter-button_search
+                            span Фільтрувати <br> за параметрами
+                            .bg-small-left
+                                include ../../static/small-house.php
+                        button(type="button").js-button_clear.filter-button_clear
+                    .filter-result-block__header
+                        p.res-text За вашими параметрами <br>знайдено
+                            span.number_flats.js-number_flats
+                            | квартир
+
+
+block footer
+    footer.footer.footer__middle
+        include ../includes/menu
+        include ../includes/footer
+    // include ../pages/includes/forms
+
+block header
+    header.header.header-bg-grey
+        include ../includes/header.pug

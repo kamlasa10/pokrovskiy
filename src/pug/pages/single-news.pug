@@ -1,0 +1,84 @@
+extends ../layout/main
+block variable
+
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="/wp-content/themes/pokrovsky/assets/styles/main.min.css")
+    //link(rel='stylesheet', href="/wp-content/themes/pokrovsky/static/base.css")
+block scripts
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/libs.js')
+    //script(src='/wp-content/themes/pokrovsky/assets/scripts/scroll.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/snap.svg.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/index.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/news.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/libs/vendors.bundle.js')
+    script(src='/wp-content/themes/pokrovsky/assets/scripts/libs/menu.bundle.js')
+
+block content
+    section.single-news
+        include includes/breadcrumb
+        .single-news__wrap
+            .content__wrap
+                .single-news__content
+                    .single-news__date
+                        +svg('date').single-news__date-icon
+                        | 22 Червня 2020
+                    .single-news__title Філософія команди РЕНОМЕ об'єднує передові технології та багаторічний досвід заради ефективного та якісного результату.
+                    .single-news__text Переважна більшість рішень РЕНОМЕ СМАРТ є власною розробкою, що проходять стадії проектування, конструювання та виробництва безпосередньо в Україні. Водночас, послугами та рішеннями компанії користуються банки та фінансові організації у 20 країнах світу.
+                    .single-news__text На сьогодні РЕНОМЕ СМАРТ здійснює аутсорс-супровід банкоматної мережі найбільших банків України та впроваджує рішення з автоматизації процесів у муніципальній сфері. Програмні розробки компанії підвищили зручність обслуговування відвідувачів ЦНАПів у 26 містах України.
+                    +img('news/1.jpg').single-news__img
+                    .single-news__buttons
+                        a(href='/news').single-news__button.single-news__button-left.button-hover
+                            | Повернутися <br>до новин
+                            .bg-small-left
+                                include ../../static/small-house.php
+                        a(href='/choose-flat').single-news__button.button-hover
+                            | Обрати <br> квартиру
+                            .bg-small-left
+                                include ../../static/small-house.php
+
+
+            .single-news__others
+                .others__scroll
+                    span.scroll__toddler.js-scroll__toddler
+                .others__wrap
+                    .others
+                        .others__title Інші новини
+                        ul.others__list
+                            li.others__news
+                                a(href='/single-news/').others__link
+                                    .others__date 22 Червня 2020
+                                    .others__text Філософія команди РЕНОМЕ об'єднує передові технології та багаторічний досвід заради ефективного та якісного результату.
+
+                            li.others__news
+                                a(href='/single-news/').others__link
+                                    .others__date 22 Червня 2020
+                                    .others__text Філософія команди РЕНОМЕ об'єднує передові технології та багаторічний досвід заради ефективного та якісного результату.
+
+                            li.others__news
+                                a(href='/single-news/').others__link
+                                    .others__date 22 Червня 2020
+                                    .others__text Філософія команди РЕНОМЕ об'єднує передові технології та багаторічний досвід заради ефективного та якісного результату.
+
+                            li.others__news
+                                a(href='/single-news/').others__link
+                                    .others__date 22 Червня 2020
+                                    .others__text Філософія команди РЕНОМЕ об'єднує передові технології та багаторічний досвід заради ефективного та якісного результату.
+
+                            li.others__news
+                                a(href='/single-news/').others__link
+                                    .others__date 22 Червня 2020
+                                    .others__text Філософія команди РЕНОМЕ об'єднує передові технології та багаторічний досвід заради ефективного та якісного результату.
+
+
+block footer
+    footer.footer.footer__small
+        include ../includes/menu
+        include ../includes/footer
+    // include ../pages/includes/forms
+
+block header
+    header.header.header-bg-blue
+        include ../includes/header.pug

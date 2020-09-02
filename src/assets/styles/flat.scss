@@ -1,0 +1,243 @@
+.flat{
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  height: 100%;
+  min-height: 100vh;
+  background: #8890A1;
+  padding: 0;
+  //padding: 0 0 110px;
+  &__param{
+    position: relative;
+    margin: 0 auto 0 var(--mrgn-button);
+    font-family: $default-font;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1em;
+    color: #EAF1FF;
+    z-index: 50;
+    text-decoration: none;
+  }
+  &__compass{
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    margin-bottom: 65px;
+  }
+  &__content{
+    display: flex;
+    align-content: flex-start;
+    width: 100%;
+  }
+  &__left{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    order: 1;
+    padding: 64px 0 0 50px;
+  }
+  &__img{
+    order: 2;
+    flex-grow: 1;
+    height: 55vh;
+    margin: 0 35px;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  &__data{
+    position: relative;
+    order: 3;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 60px 80px;
+    background: #2F5677;
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(-100%);
+      display: inline-block;
+      width: 100%;
+      height: 70px;
+      background: #2F5677;
+      clip-path: polygon(100% 0,100% 0, 100% 100%, 0 100%);
+    }
+    &-el{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-family: "Mont";
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 30px;
+      color: #EAF1FF;
+    }
+    &-res{
+      width: 70px;
+      text-transform: lowercase;
+      margin: 0 0 0 5px;
+    }
+    &-head{
+      white-space: nowrap;
+      font-size: 24px;
+      line-height: 36px;
+      margin-bottom: 20px;
+    }
+  }
+  .flat__compass{
+    position: static;
+  }
+
+}
+.list-buttons{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 50px;
+}
+.list-flat__button{
+  position: relative;
+  text-align: left;
+  font-family: "Mont";
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1em;
+  color: #EAF1FF;
+  text-decoration: none;
+  z-index: 5;
+
+  svg{
+    fill: #2F5677;
+    stroke: #2F5677;
+  }
+
+  &:nth-child(1){
+    margin-right: 105px;
+    svg{
+      fill: #61AFAA;
+      stroke: #61AFAA;
+    }
+  }
+}
+
+@media screen and (max-width: 1440px){
+  .flat{
+    &__param{
+      font-size: 18px;
+    }
+    .list-flat__button{
+      font-size: 18px;
+    }
+    &__data{
+      height: initial;
+      margin: 0 0 auto;
+      padding: 30px 65px 40px;
+      &::before{
+        height: 50px;
+      }
+      &-head{
+        font-size: 18px;
+        line-height: 24px;
+      }
+      &-el{
+        font-size: 14px;
+        line-height: 24px;
+      }
+      &-res{
+        width: 50px;
+        margin: 0 0 0 40px;
+        span{
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px){
+  .flat{
+    padding: 0 0 160px;
+    &__param{
+      //font-size: 16px;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    &__data{
+      padding: 30px 20px 40px;
+      &::before{
+        height: 40px;
+      }
+      &-res{
+        width: initial;
+        margin: 0 0 0 40px;
+        span{
+          margin-right: 5px;
+        }
+      }
+    }
+    &__left{
+      justify-content: center;
+      padding: 0 0 0 20px;
+    }
+    &__img{
+      height: initial;
+    }
+    &__content{
+      margin: auto 0;
+    }
+    .compass{
+      margin-bottom: auto;
+    }
+    .list-flat__button{
+      margin: 0;
+      &:nth-child(2){
+        margin-right: calc(50px + var(--mrgn-button));
+        margin-left: var(--mrgn-button);
+      }
+    }
+    .list-buttons{
+      flex-direction: row-reverse;
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (max-width: 767px){
+  .flat{
+    padding: 0 0 90px;
+    &__content{
+      flex-direction: column;
+    }
+    &__left{
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+    &__param{
+      margin: 30px 20px 20px var(--mrgn-button);
+    }
+    &__img{
+      margin-bottom: 60px;
+    }
+    &__data{
+      margin: 0 35px;
+    }
+    .compass{
+      margin: 0 auto 0 0;
+    }
+    .list-buttons{
+      flex-direction: column-reverse;
+      padding: 30px 10px;
+      align-items: center;
+    }
+    .list-flat__button:nth-child(2){
+      margin-bottom: 40px;
+    }
+  }
+}

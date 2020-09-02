@@ -1,0 +1,18 @@
+.popup-form-bg.js-form
+    .popup-form-wrap
+        .popup-form__close.js-form-close
+            span
+            span
+        form(name='contact').popup-form
+            fieldset.popup-form__group
+                legend.popup-form__title Зворотній <br> дзвінок
+                label.popup-form__label
+                    input( name='name' type='text' placeholder='Ім’я:' data-errormessage='Имя не введено').popup-form__input.js-form__input
+                    span.js-result-text.popup-form__error
+                label.popup-form__label
+                    input(id='form-tel-form' name='tel' type='text' placeholder='Телефон:' data-errormessage='введите номер').popup-form__input.js-form__input.js-tel-mask
+                    span.js-result-text.popup-form__error
+            button(type='button').popup-form__submit.js-form__submit.button-hover
+                | Надіслати
+                .bg-small-right
+                    include ../../../static/small-house.php

@@ -1,0 +1,36 @@
+extends ../layout/main
+block variable
+block meta
+	title= 'Home'
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="wp-content/themes/pokrovsky/assets/styles/main.min.css")
+		//link(rel='stylesheet', href="/wp-content/themes/pokrovsky/static/base.css")
+block scripts
+	script(src='wp-content/themes/pokrovsky/assets/scripts/libs.js')
+	//script(src='/wp-content/themes/pokrovsky/assets/scripts/scroll.js')
+	script(src='wp-content/themes/pokrovsky/assets/scripts/snap.svg.js')
+	script(src='wp-content/themes/pokrovsky/assets/scripts/index.js')
+	script(src='wp-content/themes/pokrovsky/assets/scripts/home.js')
+	script(src='wp-content/themes/pokrovsky/assets/scripts/libs/vendors.bundle.js')
+	script(src='wp-content/themes/pokrovsky/assets/scripts/libs/menu.bundle.js')
+	script(src='wp-content/themes/pokrovsky/assets/scripts/libs/sliderThree.bundle.js')
+
+block content
+	section.main
+		#sliderThree
+		.cursor
+			.cursor__inner.cursor__inner--circle
+				.cursor__text Натисніть на зображення та тягніть вгору або вниз
+			.cursor__inner.cursor__inner--dot
+
+block footer
+	footer.footer.footer-index
+		include ../includes/menu
+		include ../includes/footer
+		include ../pages/includes/forms
+
+block header
+	header.header.header-index
+		include ../includes/header.pug
+
